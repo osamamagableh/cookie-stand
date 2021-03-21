@@ -9,7 +9,8 @@ const Seattle = {
   average:0,
   result:0,
   getavg: function(min,max){
-    this.average = getRandomNumber(min,max);
+    this.average = Math.floor(getRandomNumber(min,max)*this.avgCus);
+   
   },
   render: function(){
     const container = document.getElementById('Objects');
@@ -47,7 +48,7 @@ const Tokyo = {
     average:0,
     result:0,
     getavg: function(min,max){
-      this.average = getRandomNumber(min,max);
+        this.average = Math.floor(getRandomNumber(min,max)*this.avgCus);
     },
     render: function(){
       const container = document.getElementById('Objects');
@@ -89,7 +90,7 @@ function getRandomNumber(min,max){
     average:0,
     result:0,
     getavg: function(min,max){
-      this.average = getRandomNumber(min,max);
+        this.average = Math.floor(getRandomNumber(min,max)*this.avgCus);
     },
     render: function(){
       const container = document.getElementById('Objects');
@@ -131,7 +132,7 @@ function getRandomNumber(min,max){
     average:0,
     result:0,
     getavg: function(min,max){
-      this.average = getRandomNumber(min,max);
+      this.average = Math.floor(getRandomNumber(min,max)*this.avgCus);
     },
     render: function(){
       const container = document.getElementById('Objects');
@@ -173,7 +174,7 @@ function getRandomNumber(min,max){
     average:0,
     result:0,
     getavg: function(min,max){
-      this.average = getRandomNumber(min,max);
+        this.average = Math.floor(getRandomNumber(min,max)*this.avgCus);
     },
     render: function(){
       const container = document.getElementById('Objects');
