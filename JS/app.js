@@ -82,9 +82,8 @@ function getfooter(){
   { //result1+=Arr3[i];
     const th2El = document.createElement('th');
     headerRow.appendChild(th2El);
-    //Arr3.push(Number(th2El.textContent));
-    //Arr3.push(th3El[i]);
-    result1+=Number(headerRow.textContent) ;
+    Arr3.push(Number(th2El) );
+    result1+=Arr3[i] ;
     th2El.textContent=result1;
     
   }
