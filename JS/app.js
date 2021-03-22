@@ -95,9 +95,6 @@ const tokyo = new Cat('TOKYO',24,3,1.2);
 const Dubai = new Cat('DUBAI',38,11,3.7);
 const Paris = new Cat('PARIS',38,20,2.3);
 const Lima = new Cat('LIMA',16,2,4.6);
-
-//getHeadert();
-
 Seatle.getavg(Seatle.minimum,Seatle.minimum);
 Seatle.render();
 
