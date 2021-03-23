@@ -11,3 +11,22 @@ table, td, th {
   table {
     border-collapse: collapse;
   }
+  body{
+    background-color: rgb(62, 238, 62);
+   
+  }
+  ul li{
+    font-family: 'Syne Mono', monospace;
+  }
+  .galary{
+    margin: 10px 50px;
+  }
+  .galary img{
+    transition: 1s;
+    padding: 15px;
+    width: 200px;
+  }
+  .galary img:hover{
+     filter:grayscale(100%);
+     transform:scale(1.1);
+  }
