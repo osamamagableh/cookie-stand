@@ -1,7 +1,8 @@
 'use strict';
 let Arr2=['6am' ,'7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 let Arr3=[];
-let result1=0;
+
+let Arr4=[];
 function Cat(name, maximum,minimum,avgCus){
   this.name = name;
   this.maximum= maximum;
@@ -10,6 +11,7 @@ function Cat(name, maximum,minimum,avgCus){
   this.result = 0;
   this.arr = [];
   this.average=0;
+  Arr4.push(this);
   //this.Arr2=['6am' ,'7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 }
 Cat.prototype.getavg= function(min,max){
@@ -27,13 +29,13 @@ Cat.prototype.render=function(){
       
       this.getavg(this.minimum,this.maximum);
       this.arr.push(this.average);
-      //Arr3.push(this.average);
+      Arr3.push(this.average);
       const td2El = document.createElement('td');
       tableDataRow.appendChild(td2El);
       td2El.textContent=this.arr[i];
       this.result=this.result+this.arr[i];
     }
-    const td3El = document.createElement('td');
+    const td3El = document.createElement('th');
     tableDataRow.appendChild(td3El);
     td3El.textContent=this.result;
     
@@ -68,7 +70,9 @@ Cat.prototype.render=function(){
     th3El.textContent='Daily Location Total';
   
 function getfooter(){
-  /*const container = document.getElementById('Objects');
+ 
+  /*const container = d
+  ocument.getElementById('Objects');
   const articleEl = document.createElement('article');
   container.appendChild(articleEl);
   const tableEl = document.createElement('table');
@@ -78,15 +82,26 @@ function getfooter(){
   const th1El = document.createElement('td');
   headerRow.appendChild(th1El);
   th1El.textContent='           ';
-  for (let i=0 ; i<=Arr2.length;i++)
-  { //result1+=Arr3[i];
-    const th2El = document.createElement('th');
-    headerRow.appendChild(th2El);
-    Arr3.push(Number(th2El) );
-    result1+=Arr3[i] ;
-    th2El.textContent=result1;
+  let arr5=[];
+  let result=0;
+  for (let i=0 ; i<Arr2.length;i++)
+  { 
+    let td2el = document.createElement('th');
+    let result1=0;
+    for(let y=0;y<Arr4.length;y++)
+    {
+      result1+=Arr4[y].arr[i];
+      result+=Arr4[y].arr[i];
+   
+    }
+    arr5.push(result1);
+    td2el.textContent=result1;
+    headerRow.appendChild(td2el);
     
   }
+  let td3el = document.createElement('th');
+  headerRow.appendChild(td3el);
+  td3el.textContent=result;
 
 }
 
