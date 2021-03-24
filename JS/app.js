@@ -52,7 +52,7 @@ Cat.prototype.render=function(){
   const th1El = document.createElement('th');
   headerRow.appendChild(th1El);
   th1El.textContent='     ';*/
-  
+
   let x = document.createElement('table');
   document.body.appendChild(x);
   let headerRow=document.createElement('th');
@@ -124,6 +124,29 @@ Paris.render();
 
 Lima.getavg(Lima.minimum,Lima.minimum);
 Lima.render();
+
+
+let myForm = document.getElementById('cookieForm');
+
+
+myForm.addEventListener('submit', addNewlocation);
+
+function addNewlocation(event) {
+  event.preventDefault();
+  let locationName = event.target.name.value;
+  let maximum = event.target.maximum.value;
+  let minimum = event.target.minimum.value;
+  let avgCus = event.target.avgCus.value;
+  let Newlocation = new Cat(locationName,maximum ,minimum ,avgCus )
+  Newlocation.getavg(Newlocation.minimum,Newlocation.maximum);
+  Newlocation.render();
+  deleteRow();
+  getfooter();
+}
+function deleteRow(){
+  x.deleteRow(Arr4.length-1) ;
+}
+
 getfooter();
 /*const Seattle = {
   name:'SEATTLE',
